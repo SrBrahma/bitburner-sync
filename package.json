@@ -1,6 +1,6 @@
 {
   "name": "sync-bitburner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rework of the official implementation of the Bitburner Filesync server",
   "type": "module",
   "bin": "./dist/npx/sync-bitburner.js",

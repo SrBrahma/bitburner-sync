@@ -32,7 +32,7 @@ export const start = ({
 
     console.log(`Getting definitions file...`);
     await sendMessage({ method: 'getDefinitionFile' }).then((data) =>
-      writeFileSync('./NetScriptDefinitions.d.ts', data.result),
+      writeFileSync('./src/NetScriptDefinitions.d.ts', data.result),
     );
 
     console.log(`Erasing scripts dir...`);
