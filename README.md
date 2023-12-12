@@ -2,8 +2,8 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![TypeScript](https://badgen.net/npm/types/env-var)](http://www.typescriptlang.org/)
-[![npm](https://img.shields.io/npm/v/sync-bitburner)](https://www.npmjs.com/package/sync-bitburner)
-[![npm](https://img.shields.io/npm/dw/sync-bitburner)](https://www.npmjs.com/package/sync-bitburner)
+[![npm](https://img.shields.io/npm/v/bitburner-ts)](https://www.npmjs.com/package/bitburner-ts)
+[![npm](https://img.shields.io/npm/dw/bitburner-ts)](https://www.npmjs.com/package/bitburner-ts)
 
 </div>
 
@@ -16,6 +16,8 @@ Just run `npx bitburner-ts`! You don't need any special setup in your Typescript
 This will automatically set up Typescript on watch mode and will push the resulting .js files into Bitburner. Requires `outDir` and `rootDir` on `tsconfig.json` to be set.
 
 The .js files will be by default put into the `script` directory in the game's `home` server.
+
+You can install it via `npm i bitburner-ts` and have it as a start script in your package.json for quality of life ✨
 
 ## Usage
 
