@@ -2,8 +2,8 @@ import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import chokidar from 'chokidar';
 import { globbySync } from 'globby';
-import { parseMessage, sendMessage } from './message.js';
-import { setupWebSocket } from './webSocket.js';
+import { parseMessage, sendMessage } from './message';
+import { setupWebSocket } from './webSocket';
 
 export const start = ({
   sourceJs,
