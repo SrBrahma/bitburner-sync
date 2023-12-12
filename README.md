@@ -2,8 +2,8 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![TypeScript](https://badgen.net/npm/types/env-var)](http://www.typescriptlang.org/)
-[![npm](https://img.shields.io/npm/v/sync-bitburner)](https://www.npmjs.com/package/sync-bitburner)
-[![npm](https://img.shields.io/npm/dw/sync-bitburner)](https://www.npmjs.com/package/sync-bitburner)
+[![npm](https://img.shields.io/npm/v/bitburner-ts)](https://www.npmjs.com/package/bitburner-ts)
+[![npm](https://img.shields.io/npm/dw/bitburner-ts)](https://www.npmjs.com/package/bitburner-ts)
 
 </div>
 
