@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
 import { Command, InvalidArgumentError } from '@commander-js/extra-typings';
