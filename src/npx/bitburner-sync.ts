@@ -10,9 +10,9 @@ const myParseInt = (value: string) => {
 };
 
 const program = new Command()
-  .option('-p, --port <number>', 'The port to be used', myParseInt, 12525)
-  .option('-s, --src <dir>', 'Where the source .js files are located.', 'dist')
-  .option('-d, --dest <dir>', 'Where the files will be stored in the home server', 'scripts')
+  .option('-p, --port <number>', 'the port to be used', myParseInt, 12525)
+  .option('-s, --src <dir>', 'where the source .js files are located', 'dist')
+  .option('-d, --dest <dir>', "where the files are stored in the game's home server", 'scripts')
   .parse();
 
 const options = program.opts();

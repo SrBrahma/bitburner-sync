@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Rework of the official implementation of the Bitburner Filesync server",
   "type": "module",
-  "bin": "./dist/npx/index.js",
-  "main": "./dist/npx/index.js",
+  "bin": "./dist/npx/bitburner-sync.js",
+  "main": "./dist/npx/bitburner-sync.js",
   "scripts": {
     "prepare": "bun build",
     "build": "tsc --build --verbose --pretty --clean",
@@ -37,8 +37,7 @@
     "@types/ws": "^8.5.3",
     "eslint-config-gev": "^3.8.0",
     "prettier": "^2.8.8",
-    "prettier-config-gev": "^1.1.3",
-    "ts-node": "^10.9.1"
+    "prettier-config-gev": "^1.1.3"
   },
   "prettier": "prettier-config-gev"
 }
