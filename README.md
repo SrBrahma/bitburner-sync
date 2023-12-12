@@ -6,7 +6,7 @@ This also is a way cleaner and simpler implementation.
 
 ## Usage
 
-```
+```bash
 npm i bitburner-sync
 # or
 npx bitburner-sync [options]
