@@ -1,42 +1,21 @@
-# bitburner-filesync
+# bitburner-sync
 
-A file synchronisation utility for Bitburner, using the Remote File API.
+Rework of [bitburner-filesync](https://github.com/bitburner-official/bitburner-filesync). The original didn't work when the game was running on Windows and the sync on WSL.
 
-It allows players to synchronize scripts and text files from their computer's disk to the game in both the Electron build and website.
+This also is a way cleaner and simpler implementation.
 
-## How to use (for users)
+## Usage
 
-You must have a recent version of `npm` installed after which you can run
+```bash
+npm i bitburner-sync
+# or
+npx bitburner-sync [options]
+```
 
 ```
-npx bitburner-filesync
-```
-
-This pulls and runs the latest release of bitburner-filesync for you.
-
-## Configuration
-
-The program, when ran, uses a local file to have itself configured to your preferences.
-This file is `filesync.json` within the directory you start bitburner-filesync.
-
-Here's an example of it's contents:
-
-```js
-{
-  "allowedFiletypes": [
-    ".js",
-    ".script",
-    ".txt"
-  ],
-  "allowDeletingFiles": false,
-  "port": 12525,
-  "scriptsFolder": ".",
-  "quiet": false,
-  "dry": false,
-  "definitionFile": {
-    "update": false,
-    "location": "NetScriptDefinitions.d.ts"
-  },
-  "pushAllOnConnection": false
-}
+Options:
+  -p, --port <number>  the port to be used (default: 12525)
+  -s, --src <dir>      where the source .js files are located (default: "dist")
+  -d, --dest <dir>     where the files are stored in the game's home server (default: "scripts")
+  -h, --help           display help for command
 ```
