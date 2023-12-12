@@ -6,7 +6,7 @@ import { Command, InvalidArgumentError } from '@commander-js/extra-typings';
 import chokidar from 'chokidar';
 import { execaCommand } from 'execa';
 import { rimrafSync } from 'rimraf';
-import { start } from '../index';
+import { start } from '../index.js';
 
 const myParseInt = (value: string) => {
   const parsedValue = parseInt(value, 10);

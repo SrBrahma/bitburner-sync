@@ -1,6 +1,6 @@
 import type { RawData } from 'ws';
 import type { Message, MessageCommon, Method } from './types';
-import { ws } from './webSocket';
+import { ws } from './webSocket.js';
 
 let messageCounter = 0;
 
