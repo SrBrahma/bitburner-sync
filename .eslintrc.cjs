@@ -20,9 +20,6 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: 'module',
       },
-      rules: {
-        'no-relative-import-paths/no-relative-import-paths': 'off',
-      },
     },
   ],
   ignorePatterns: ['/lib/**/*', '/dist/**/*'],

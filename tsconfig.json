@@ -1,11 +1,5 @@
 {
-  "ts-node": {
-    "files": true,
-    "esm": true,
-    "experimentalSpecifierResolution": "node",
-    "sourceMap": true
-  },
-  "include": ["src/**/*", "npx/**/*"],
+  "include": ["src/**/*"],
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
@@ -17,13 +11,10 @@
     "noUncheckedIndexedAccess": true,
     "inlineSources": true,
     "strict": true,
-    "outDir": "dist/",
+    "outDir": "dist",
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "moduleResolution": "node",
-    "paths": {
-      "/*": ["./src/*"]
-    }
+    "moduleResolution": "node"
   }
 }
