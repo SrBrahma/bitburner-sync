@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { Command, InvalidArgumentError } from '@commander-js/extra-typings';
 import chokidar from 'chokidar';
 import { execaCommand } from 'execa';
@@ -22,7 +21,7 @@ const program = new Command()
 
 type TsConfig = { compilerOptions?: { rootDir?: string; outDir?: string } };
 
-export const tsWatcher = () => {
+const tsWatcher = () => {
   program.parse();
   const options = program.opts();
 
@@ -65,9 +64,4 @@ export const tsWatcher = () => {
   });
 };
 
-const currentFile = fileURLToPath(import.meta.url);
-const mainFile = process.argv[1];
-
-if (currentFile === mainFile) {
-  tsWatcher();
-}
+tsWatcher();
