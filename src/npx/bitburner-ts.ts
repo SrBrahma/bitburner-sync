@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { Command, InvalidArgumentError } from '@commander-js/extra-typings';
 import chokidar from 'chokidar';
 import { execaCommand } from 'execa';
+import { rimrafSync } from 'rimraf';
+import { start } from '../index';
 
 const myParseInt = (value: string) => {
   const parsedValue = parseInt(value, 10);
@@ -61,10 +64,6 @@ export const tsWatcher = () => {
     process.exit();
   });
 };
-
-import { fileURLToPath } from 'url';
-import { rimrafSync } from 'rimraf';
-import { start } from '..';
 
 const currentFile = fileURLToPath(import.meta.url);
 const mainFile = process.argv[1];
