@@ -1,3 +1,12 @@
+<div align="center">
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![TypeScript](https://badgen.net/npm/types/env-var)](http://www.typescriptlang.org/)
+[![npm](https://img.shields.io/npm/v/sync-bitburner)](https://www.npmjs.com/package/sync-bitburner)
+[![npm](https://img.shields.io/npm/dw/sync-bitburner)](https://www.npmjs.com/package/sync-bitburner)
+
+</div>
+
 # bitburner-sync
 
 Rework of [bitburner-filesync](https://github.com/bitburner-official/bitburner-filesync). The original didn't work when the game was running on Windows and the sync on WSL.
