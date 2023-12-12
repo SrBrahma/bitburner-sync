@@ -17,6 +17,8 @@ This will automatically set up Typescript on watch mode and will push the result
 
 The .js files will be by default put into the `script` directory in the game's `home` server.
 
+You can install it via `npm i bitburner-ts` and have it as a start script in your package.json for quality of life ✨
+
 ## Usage
 
 ```bash
