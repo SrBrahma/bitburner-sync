@@ -1,29 +1,26 @@
 import { readFileSync, writeFileSync } from 'fs';
-import Path from 'path';
+import path from 'path';
 import chokidar from 'chokidar';
 import { globbySync } from 'globby';
 import { parseMessage, sendMessage } from './message.js';
 import { setupWebSocket } from './webSocket.js';
 
 export const start = ({
-  source,
-  destination = 'scripts',
-  port = 12525,
+  sourceJs,
+  sourceTs,
+  destination,
+  port,
 }: {
-  /** Where the source JS files are located. */
-  source: string;
-  /**
-   * Where are your files going to be located in the home server.
-   * @default 'scripts'
-   */
-  destination?: string;
-  /** @default 12525 */
-  port?: number;
+  sourceJs: string;
+  sourceTs: string;
+  /** Where are your files going to be located in the home server. */
+  destination: string;
+  port: number;
 }) => {
   // Remove leading slash.
   destination = destination.replace(/^\//, '');
 
-  const sourcePathAbsolute = Path.resolve(source);
+  const sourcePathAbsolute = path.resolve(sourceJs);
 
   const watcher = chokidar.watch(sourcePathAbsolute);
 
@@ -32,7 +29,7 @@ export const start = ({
 
     console.log(`Getting definitions file...`);
     await sendMessage({ method: 'getDefinitionFile' }).then((data) =>
-      writeFileSync('./src/NetScriptDefinitions.d.ts', data.result),
+      writeFileSync(path.resolve(sourceTs, 'NetscriptDefinitions.d.ts'), data.result),
     );
 
     console.log(`Erasing scripts dir...`);
@@ -49,7 +46,7 @@ export const start = ({
         params: {
           server: 'home',
           filename: getFilename(destination, relativePath),
-          content: readFileSync(Path.resolve(sourcePathAbsolute, relativePath)).toString(),
+          content: readFileSync(path.resolve(sourcePathAbsolute, relativePath)).toString(),
         },
       });
 
@@ -114,4 +111,4 @@ const eraseFilesInScriptDir = async (destination: string) => {
 
 const getFilename = (destinationDirPath: string, relativeFilepath: string) =>
   // Posix ('/') is the right one for BitBurner even on Windows.
-  Path.posix.join(destinationDirPath, relativeFilepath);
+  path.posix.join(destinationDirPath, relativeFilepath);

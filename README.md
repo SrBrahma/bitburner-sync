@@ -7,24 +7,25 @@
 
 </div>
 
-# bitburner-sync
+# bitburner-ts
 
-Rework of [bitburner-filesync](https://github.com/bitburner-official/bitburner-filesync). The original didn't work when the game was running on Windows and the sync on WSL.
+Rework of [bitburner-filesync](https://github.com/bitburner-official/bitburner-filesync) to work directly with Typescript and with a cleaner implementation. Also, supports WSL when the gaming is running on Windows.
 
-This also is a way cleaner and simpler implementation.
+Just run `npx bitburner-ts`! You don't need any setup in your Typescript project to have this working, like [typescript-template](https://github.com/bitburner-official/typescript-template).
+
+This will automatically set up Typescript on watch mode and will push the resulting .js files into Bitburner.
 
 ## Usage
 
 ```bash
-npm i bitburner-sync
+npx bitburner-ts [options]
 # or
-npx bitburner-sync [options]
+npm i bitburner-ts
 ```
 
 ```
 Options:
   -p, --port <number>  the port to be used (default: 12525)
-  -s, --src <dir>      where the source .js files are located (default: "dist")
-  -d, --dest <dir>     where the files are stored in the game's home server (default: "scripts")
+  -d, --dest <dir>     directory in the game's home server to put the files (default: "scripts")
   -h, --help           display help for command
 ```
