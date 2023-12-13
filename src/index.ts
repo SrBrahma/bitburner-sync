@@ -7,12 +7,10 @@ import { setupWebSocket } from './webSocket.js';
 
 export const start = ({
   sourceJs,
-  sourceTs,
   destination,
   port,
 }: {
   sourceJs: string;
-  sourceTs: string;
   /** Where are your files going to be located in the home server. */
   destination: string;
   port: number;
@@ -29,7 +27,7 @@ export const start = ({
 
     console.log(`Getting definitions file...`);
     await sendMessage({ method: 'getDefinitionFile' }).then((data) =>
-      writeFileSync(path.resolve(sourceTs, 'NetscriptDefinitions.d.ts'), data.result),
+      writeFileSync('NetscriptDefinitions.d.ts', data.result),
     );
 
     console.log(`Erasing scripts dir...`);

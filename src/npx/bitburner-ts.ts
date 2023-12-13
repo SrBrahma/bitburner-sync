@@ -41,7 +41,6 @@ const tsWatcher = () => {
 
   start({
     sourceJs: outDir,
-    sourceTs: rootDir,
     destination: options.dest,
     port: options.port,
   });
