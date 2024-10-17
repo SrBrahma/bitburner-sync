@@ -48,7 +48,7 @@ const tsWatcher = () => {
   console.log('Setting up Typescript watcher...');
 
   // Remove .js files on outDir when .ts files are excluded
-  chokidar.watch(`${rootDir}/**/*.ts`).on('unlink', (p) => {
+  chokidar.watch(`${rootDir}/**/*.ts`).on('unlink', (p: string) => {
     const relative = path.relative(rootDir, p).replace(/\.ts$/, '.js');
     const distFile = path.resolve(outDir, relative);
 
