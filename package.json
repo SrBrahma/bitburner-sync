@@ -1,48 +1,48 @@
 {
   "name": "bitburner-ts",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Easy CLI tool to use Typescript with Bitburner",
-  "type": "module",
-  "bin": "./dist/npx/bitburner-ts.js",
   "main": "./dist/index.js",
+  "bin": "./dist/npx/bitburner-ts.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "bun typecheck && bun lint:write && bun prettier:write",
+    "lint:write": "eslint --fix .",
+    "prepare": "bun run build",
+    "prettier:write": "prettier --write --log-level warn .",
+    "start": "bun --watch src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
   "files": [
     "dist"
   ],
-  "scripts": {
-    "prepare": "bun run build",
-    "build": "tsc",
-    "typecheck": "tsc --noEmit",
-    "prettier:write": "prettier --write --log-level warn .",
-    "lint:write": "eslint --fix .",
-    "format": "bun typecheck && bun lint:write && bun prettier:write",
-    "start": "bun --watch src/index.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SrBrahma/bitburner-ts.git"
-  },
   "keywords": [
     "bitburner",
     "rfa",
     "remote",
     "sync"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SrBrahma/bitburner-ts.git"
+  },
+  "type": "module",
+  "prettier": "prettier-config-gev",
   "dependencies": {
-    "@commander-js/extra-typings": "^11.1.0",
-    "chokidar": "^3.5.3",
-    "commander": "^11.1.0",
-    "execa": "^8.0.1",
-    "globby": "^13.2.2",
-    "rimraf": "^5.0.5",
-    "ws": "^8.8.1"
+    "@commander-js/extra-typings": "^12.1.0",
+    "chokidar": "^4.0.1",
+    "commander": "^12.1.0",
+    "execa": "^9.4.1",
+    "globby": "^14.0.2",
+    "rimraf": "^6.0.1",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.23",
-    "@types/ws": "^8.5.3",
-    "eslint-config-gev": "^3.8.0",
-    "prettier": "^2.8.8",
-    "prettier-config-gev": "^1.1.3",
-    "typescript": "^5.3.3"
-  },
-  "prettier": "prettier-config-gev"
+    "@types/node": "^22.7.6",
+    "@types/ws": "^8.5.12 ",
+    "eslint-config-gev": "^4.5.1",
+    "prettier": "^3.3.3",
+    "prettier-config-gev": "^1.2.0",
+    "typescript": "^5.6.3 "
+  }
 }

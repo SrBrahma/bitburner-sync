@@ -38,28 +38,28 @@ export const start = ({
       cwd: sourcePathAbsolute,
     });
 
-    const sendPushFileMessage = (relativePath: string) =>
+    const sendPushFileMessage = (absolutPath: string) =>
       sendMessage({
         method: 'pushFile',
         params: {
           server: 'home',
-          filename: getFilename(destination, relativePath),
-          content: readFileSync(path.resolve(sourcePathAbsolute, relativePath)).toString(),
+          filename: getFilename(destination, absolutPath, sourcePathAbsolute),
+          content: readFileSync(absolutPath).toString(),
         },
       });
 
-    initialFiles.forEach((file) => sendPushFileMessage(file));
+    initialFiles.forEach((file) => sendPushFileMessage(path.resolve(sourcePathAbsolute, file)));
 
     console.log('Watching folder', sourcePathAbsolute);
     watcher
       .on('add', sendPushFileMessage)
       .on('change', sendPushFileMessage)
-      .on('unlink', (filePath) =>
+      .on('unlink', (filePath: string) =>
         sendMessage({
           method: 'deleteFile',
           params: {
             server: 'home',
-            filename: getFilename(destination, filePath),
+            filename: getFilename(destination, filePath, sourcePathAbsolute),
           },
         }),
       );
@@ -107,6 +107,12 @@ const eraseFilesInScriptDir = async (destination: string) => {
   );
 };
 
-const getFilename = (destinationDirPath: string, relativeFilepath: string) =>
+const getFilename = (
+  destinationDirPath: string,
+  relativeFilepath: string,
+  absoluteDirPath: string,
+) =>
   // Posix ('/') is the right one for BitBurner even on Windows.
-  path.posix.join(destinationDirPath, relativeFilepath);
+  path.posix
+    .join(destinationDirPath, path.relative(absoluteDirPath, relativeFilepath))
+    .replaceAll('\\', '/');
